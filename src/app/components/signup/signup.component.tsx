@@ -32,7 +32,7 @@ const SignupForm: React.FC = () => {
     setComponentState,
   ] = React.useState<ComponentViewState>(ComponentViewState.DEFAULT);
   const isError = componentState === ComponentViewState.ERROR;
-  injectStyle();
+
   const validate = (values: FormValues) => {
     const password = values.password;
     const evaluation = zxcvbn(password);
@@ -104,7 +104,7 @@ const SignupForm: React.FC = () => {
       try {
         setDisable(true);
         showLoader();
-
+        injectStyle();
         const response = await signupService.signup(
           values.firstName,
           values.lastName,
