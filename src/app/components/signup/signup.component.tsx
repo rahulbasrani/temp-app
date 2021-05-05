@@ -118,7 +118,8 @@ const SignupForm: React.FC = () => {
           setDisable(false);
           hideLoader();
           setComponentState(ComponentViewState.ERROR);
-          if (response.error == "Error: 404") {
+          console.log(response.error);
+          if (response.error == "Error: Request failed with status code 404") {
             toast(
               <div className="toast-class">
                 <span>
@@ -137,7 +138,7 @@ const SignupForm: React.FC = () => {
               }
             );
           }
-          if (response.error === "Error: 400") {
+          if (response.error == "Error: Request failed with status code 400") {
             toast(
               <div className="toast-class">
                 <span>
