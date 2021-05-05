@@ -1,4 +1,10 @@
 import { ServiceResponse } from "../api";
+import axios, {
+  AxiosInstance,
+  AxiosResponse,
+  AxiosRequestConfig,
+  AxiosError,
+} from "axios";
 import { SignupService } from "./signup.service";
 import { RegistrationForm } from "@models";
 import Config from "@config";
@@ -20,16 +26,11 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await fetch(
-        "https://omnimetic-backend-staging.herokuapp.com/accounts",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
+      const res = await axios.post(Config.baseUrl, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       if (res.status === 400) {
         throw new Error("400");
       }
