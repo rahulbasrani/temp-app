@@ -12,7 +12,6 @@ import Footer from "../footer/footer.component";
 import SignupDescription from "./signup.description.component";
 require("./signup.style.css");
 const Danger = require("../../../assets/images/danger.svg") as string;
-toast.configure();
 
 interface FormValues {
   email: string;
@@ -23,6 +22,7 @@ interface FormValues {
   toggle: boolean;
 }
 
+toast.configure();
 const SignupForm: React.FC = () => {
   const dependencies = React.useContext(DIContext);
   const { translation, signupService } = dependencies;
@@ -117,23 +117,15 @@ const SignupForm: React.FC = () => {
         if (!response.data) {
           setDisable(false);
           hideLoader();
-          toast(
-            <div className="toast-class">
-              <span>
-                <img src={Danger} alt="" />
-              </span>
-              {translation.t("EMAIL_IS_ALREADY_IN_USE")}
-            </div>,
-            {
-              position: "top-center",
-              autoClose: 3500,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: 0,
-            }
-          );
+          toast("dsnjkjnskdnk", {
+            position: "top-center",
+            autoClose: 3500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+          });
           setComponentState(ComponentViewState.ERROR);
         } else {
           setDisable(false);
