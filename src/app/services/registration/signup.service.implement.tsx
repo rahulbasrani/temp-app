@@ -21,7 +21,7 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await fetch(`${baseUrl}/undefined/accounts`, {
+      const res = await fetch(`${baseUrl}accounts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
