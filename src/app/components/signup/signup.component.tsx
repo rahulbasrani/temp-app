@@ -117,23 +117,15 @@ const SignupForm: React.FC = () => {
         if (!response.data) {
           setDisable(false);
           hideLoader();
-          toast(
-            <div className="toast-class">
-              <span>
-                <img src={Danger} alt="" />
-              </span>
-              {translation.t("EMAIL_IS_ALREADY_IN_USE")}
-            </div>,
-            {
-              position: "top-center",
-              autoClose: 3500,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: 0,
-            }
-          );
+          toast("<div className", {
+            position: "top-center",
+            autoClose: 3500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: 0,
+          });
           setComponentState(ComponentViewState.ERROR);
         } else {
           setDisable(false);
