@@ -37,6 +37,9 @@ export default class SignupServiceImplement implements SignupService {
       if (res.status === 400) {
         throw new Error();
       }
+      if (res.status === 404) {
+        throw new Error();
+      }
       return new ServiceResponse<RegistrationForm>(data);
     } catch (error) {
       return new ServiceResponse<RegistrationForm>(undefined, error);
