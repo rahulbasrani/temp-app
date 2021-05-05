@@ -10,7 +10,7 @@ import useFullPageLoader from "../loader/use-fullpage-loader";
 import Navbar from "../navbar/navbar.component";
 import Footer from "../footer/footer.component";
 import SignupDescription from "./signup.description.component";
-require("./signup.style.css");
+require("./signup.style.scss");
 const Danger = require("../../../assets/images/danger.svg") as string;
 toast.configure();
 
@@ -24,6 +24,7 @@ interface FormValues {
 }
 
 const SignupForm: React.FC = () => {
+  React.useEffect(injectStyle(), []);
   const dependencies = React.useContext(DIContext);
   const { translation, signupService } = dependencies;
   const [disable, setDisable] = React.useState(true);
@@ -105,7 +106,7 @@ const SignupForm: React.FC = () => {
       try {
         setDisable(true);
         showLoader();
-        injectStyle();
+
         const response = await signupService.signup(
           values.firstName,
           values.lastName,
