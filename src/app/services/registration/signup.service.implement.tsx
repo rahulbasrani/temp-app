@@ -20,13 +20,16 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await fetch(`${Config.baseUrl}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const res = await fetch(
+        "https://omnimetic-backend-staging.herokuapp.com/accounts",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       if (res.status === 400) {
         throw new Error("400");
       }
