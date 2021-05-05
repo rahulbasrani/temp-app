@@ -26,7 +26,7 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await axios.post(Config.baseUrl, data, {
+      const res = await axios.post(`${Config.baseUrl}/accounts`, data, {
         headers: {
           "Content-Type": "application/json",
         },
