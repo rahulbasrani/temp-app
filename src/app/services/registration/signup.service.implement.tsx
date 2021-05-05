@@ -35,10 +35,10 @@ export default class SignupServiceImplement implements SignupService {
       console.log(baseUrl);
 
       if (res.status === 400) {
-        throw new Error();
+        throw new Error("400");
       }
       if (res.status === 404) {
-        throw new Error();
+        throw new Error("404");
       }
       return new ServiceResponse<RegistrationForm>(data);
     } catch (error) {

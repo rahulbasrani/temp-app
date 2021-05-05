@@ -215,7 +215,6 @@ const FormElement = ({
                   </button>
                 </div>
               </form>
-              <button onClick={inputChange}>click</button>
             </div>
           </div>
         </div>
