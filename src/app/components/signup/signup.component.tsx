@@ -3,6 +3,7 @@ import zxcvbn from "zxcvbn";
 import { ToastContainer, toast } from "react-toastify";
 import { FormikErrors, useFormik } from "formik";
 import { ComponentViewState, DIContext } from "@helpers";
+import { injectStyle } from "react-toastify/dist/inject-style";
 import "react-toastify/dist/ReactToastify.css";
 import FormElement from "./signup.form.elemet.component";
 import useFullPageLoader from "../loader/use-fullpage-loader";
@@ -31,7 +32,7 @@ const SignupForm: React.FC = () => {
     setComponentState,
   ] = React.useState<ComponentViewState>(ComponentViewState.DEFAULT);
   const isError = componentState === ComponentViewState.ERROR;
-
+  injectStyle();
   const validate = (values: FormValues) => {
     const password = values.password;
     const evaluation = zxcvbn(password);
