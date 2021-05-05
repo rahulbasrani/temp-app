@@ -12,6 +12,7 @@ import Footer from "../footer/footer.component";
 import SignupDescription from "./signup.description.component";
 require("./signup.style.css");
 const Danger = require("../../../assets/images/danger.svg") as string;
+toast.configure();
 
 interface FormValues {
   email: string;
