@@ -117,7 +117,7 @@ const SignupForm: React.FC = () => {
         if (!response.data) {
           setDisable(false);
           hideLoader();
-          toast("dsnjkjnskdnk", {
+          toast("not a good server", {
             position: "top-center",
             autoClose: 3500,
             hideProgressBar: false,
@@ -139,7 +139,6 @@ const SignupForm: React.FC = () => {
               <img src={Danger} alt="" />
             </span>
             server not running
-            {/* {translation.t("S")} */}
           </div>,
           {
             position: "top-center",

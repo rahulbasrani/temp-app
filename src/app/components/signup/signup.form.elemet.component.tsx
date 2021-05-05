@@ -2,6 +2,7 @@ import * as React from "react";
 import { DIContext } from "@helpers";
 import { values } from "lodash";
 import { TouchAppRounded } from "@material-ui/icons";
+import { toast } from "react-toastify";
 
 interface Props {
   submit: () => void;
@@ -44,6 +45,18 @@ const FormElement = ({
 }: Props) => {
   const dependencies = React.useContext(DIContext);
   const { translation, signupService } = dependencies;
+
+  const inputChange = () => {
+    toast("ckicked on that", {
+      position: "top-center",
+      autoClose: 3500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: 0,
+    });
+  };
 
   return (
     <>
@@ -202,6 +215,7 @@ const FormElement = ({
                   </button>
                 </div>
               </form>
+              <button onClick={inputChange}>click</button>
             </div>
           </div>
         </div>
