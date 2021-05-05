@@ -67,7 +67,7 @@ const FormElement = ({
               </div>
 
               <form
-                className="register-form mt-3"
+                className="register-form mt-3 col-md-12"
                 id="register-form"
                 autoComplete="off"
                 onSubmit={submit}

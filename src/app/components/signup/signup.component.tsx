@@ -118,13 +118,13 @@ const SignupForm: React.FC = () => {
           setDisable(false);
           hideLoader();
           setComponentState(ComponentViewState.ERROR);
-          if ((response.error = "400")) {
+          if (response.error == "Error: 404") {
             toast(
               <div className="toast-class">
                 <span>
                   <img src={Danger} alt="" />
                 </span>
-                {translation.t("EMAIL_IS_ALREADY_IN_USE")}
+                {translation.t("SERVER_NOT_RUNNING")}
               </div>,
               {
                 position: "top-center",
@@ -137,13 +137,13 @@ const SignupForm: React.FC = () => {
               }
             );
           }
-          if (response.error == "404") {
+          if (response.error === "Error: 400") {
             toast(
               <div className="toast-class">
                 <span>
                   <img src={Danger} alt="" />
                 </span>
-                {translation.t("SERVER_NOT_RUNNING")}
+                {translation.t("EMAIL_IS_ALREADY_IN_USE")}
               </div>,
               {
                 position: "top-center",
