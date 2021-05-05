@@ -1,16 +1,16 @@
 import * as React from "react";
 import zxcvbn from "zxcvbn";
 import { ToastContainer, toast } from "react-toastify";
+import { injectStyle } from "react-toastify/dist/inject-style";
 import { FormikErrors, useFormik } from "formik";
 import { ComponentViewState, DIContext } from "@helpers";
-import { injectStyle } from "react-toastify/dist/inject-style";
 import "react-toastify/dist/ReactToastify.css";
 import FormElement from "./signup.form.elemet.component";
 import useFullPageLoader from "../loader/use-fullpage-loader";
 import Navbar from "../navbar/navbar.component";
 import Footer from "../footer/footer.component";
 import SignupDescription from "./signup.description.component";
-require("./signup.style.scss");
+require("./signup.style.css");
 const Danger = require("../../../assets/images/danger.svg") as string;
 toast.configure();
 
@@ -24,7 +24,6 @@ interface FormValues {
 }
 
 const SignupForm: React.FC = () => {
-  React.useEffect(injectStyle(), []);
   const dependencies = React.useContext(DIContext);
   const { translation, signupService } = dependencies;
   const [disable, setDisable] = React.useState(true);
@@ -106,7 +105,7 @@ const SignupForm: React.FC = () => {
       try {
         setDisable(true);
         showLoader();
-
+        injectStyle();
         const response = await signupService.signup(
           values.firstName,
           values.lastName,
@@ -118,15 +117,23 @@ const SignupForm: React.FC = () => {
         if (!response.data) {
           setDisable(false);
           hideLoader();
-          toast("<div className", {
-            position: "top-center",
-            autoClose: 3500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: 0,
-          });
+          toast(
+            <div className="toast-class">
+              <span>
+                <img src={Danger} alt="" />
+              </span>
+              {translation.t("EMAIL_IS_ALREADY_IN_USE")}
+            </div>,
+            {
+              position: "top-center",
+              autoClose: 3500,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: 0,
+            }
+          );
           setComponentState(ComponentViewState.ERROR);
         } else {
           setDisable(false);

@@ -160,38 +160,30 @@ const FormElement = ({
                   ) : null}
                 </div>
 
-                <div className="bottom-info box col-md-12">
+                <div className="bottom-info checkbox d-flex box col-md-12">
+                  <input
+                    type="checkbox"
+                    id="chkbx"
+                    onBlur={onBlur}
+                    onChange={onChange}
+                    name="toggle"
+                    checked={oncheck}
+                  />
+                  <label htmlFor="chkbx"></label>
+                  <span>{translation.t("SUBMIT_BUTTON_STRING")}</span>
                   <span>
-                    <label htmlFor="chkbx">
-                      <input
-                        type="checkbox"
-                        className="checkbox-class"
-                        id="chkbx"
-                        onBlur={onBlur}
-                        onChange={onChange}
-                        name="toggle"
-                        checked={oncheck}
-                      />
-                      <span className="custom-checkbox"></span>
-                    </label>
+                    <a href="/tnc" className="anchor-class-checkbox">
+                      {translation.t("TERMS_OF_USE")}
+                    </a>
                   </span>
                   &nbsp;
-                  <span className="checkbox-label-text">
-                    <span>{translation.t("SUBMIT_BUTTON_STRING")}</span>
-                    <span>
-                      <a href="/tnc" className="anchor-class-checkbox">
-                        {translation.t("TERMS_OF_USE")}
-                      </a>
-                    </span>
-                    &nbsp;
-                    <span>{translation.t("AND")}</span>
-                    &nbsp;
-                    <span>
-                      <a href="/privacy" className="anchor-class-checkbox">
-                        {translation.t("PRIVACY")}
-                      </a>
-                      .
-                    </span>
+                  <span>{translation.t("AND")}</span>
+                  &nbsp;
+                  <span>
+                    <a href="/privacy" className="anchor-class-checkbox">
+                      {translation.t("PRIVACY")}
+                    </a>
+                    .
                   </span>
                 </div>
                 <div className="form-group form-button col-md-12 ">
