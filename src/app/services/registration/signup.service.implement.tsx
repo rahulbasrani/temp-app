@@ -1,9 +1,5 @@
 import { ServiceResponse } from "../api";
 import { SignupService } from "./signup.service";
-import { ToastContainer, toast } from "react-toastify";
-import { injectStyle } from "react-toastify/dist/inject-style";
-import "react-toastify/dist/ReactToastify.css";
-
 import { RegistrationForm } from "@models";
 import Config from "@config";
 const baseUrl = Config.baseUrl;
@@ -25,15 +21,13 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await fetch(baseUrl, {
+      const res = await fetch(`${baseUrl}/accounts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      console.log(baseUrl);
-
       if (res.status === 400) {
         throw new Error("400");
       }

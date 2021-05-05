@@ -2,7 +2,6 @@ import * as React from "react";
 import { DIContext } from "@helpers";
 import { values } from "lodash";
 import { TouchAppRounded } from "@material-ui/icons";
-import { toast } from "react-toastify";
 
 interface Props {
   submit: () => void;
@@ -45,18 +44,6 @@ const FormElement = ({
 }: Props) => {
   const dependencies = React.useContext(DIContext);
   const { translation, signupService } = dependencies;
-
-  const inputChange = () => {
-    toast("ckicked on that", {
-      position: "top-center",
-      autoClose: 3500,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: 0,
-    });
-  };
 
   return (
     <>
@@ -183,7 +170,7 @@ const FormElement = ({
                     checked={oncheck}
                   />
                   <label htmlFor="chkbx"></label>
-                  <span>{translation.t("SUBMIT_BUTTON_STRING")}</span>
+                  <span>{translation.t("SUBMIT_BUTTON_STRING")}</span>&nbsp;
                   <span>
                     <a href="/tnc" className="anchor-class-checkbox">
                       {translation.t("TERMS_OF_USE")}
@@ -208,7 +195,9 @@ const FormElement = ({
                     className="btn btn-block btn-lg btn-class signup-btn"
                   >
                     <div className="signup-button-text">
-                      <span>{translation.t("CREATE_ACCOUNT_BUTTON")}</span>
+                      <span className="signup-submit-btn-cls">
+                        {translation.t("CREATE_ACCOUNT_BUTTON")}
+                      </span>
 
                       <span className="arrow"></span>
                     </div>

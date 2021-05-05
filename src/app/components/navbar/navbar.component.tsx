@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
           <img src={Logo} alt="reactangel1" />
         </a>
         <button
-          className="navbar-toggler"
+          className="navbar-toggler collapsed"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -23,8 +23,8 @@ const Navbar: React.FC = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse">
-          <ul className="navbar-nav ml-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav  ml-auto">
             <li className="nav-item">
               <a className="mr-3 anchor-class anchor-class-login" href="/login">
                 {translation.t("LOGIN")}

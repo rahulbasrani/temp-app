@@ -12,7 +12,7 @@
   "ORGANISATION_NAME": "Company",
   "PASSWORD_NAME": "Password",
   "CONFIRM_PASS": "Confirm password",
-  "SUBMIT_BUTTON_STRING": "I agree to Omnimetic ",
+  "SUBMIT_BUTTON_STRING": "I agree to Omnimetic",
   "FIRST_NAME_LABEL": "First Name",
   "LAST_NAME_LABEL": "Last Name",
   "EMAIL": "Email",
@@ -61,8 +61,9 @@
   "FORGOT_PASSWORD_QUES": "Forgot password?",
   "ENTER_EMAIL_TO_SEND": "Enter your email address and we'll send you a link to reset your password",
   "SEND_LINK": "Send Link",
-  "EMAIL_IS_ALREADY_IN_USE": "  This email is already in use.",
+  "EMAIL_IS_ALREADY_IN_USE": "  This email is already in use",
   "ORGANISATION_INCORRECT": "Organization name should not be blank spaces",
   "LASTNAME_INCORRECT": "Last name should not be blank spaces",
-  "FIRSTNAME_INCORRECT": "First name should not be blank spaces"
+  "FIRSTNAME_INCORRECT": "First name should not be blank spaces",
+  "SERVER_NOT_RUNNING": " Server is not reachable"
 }

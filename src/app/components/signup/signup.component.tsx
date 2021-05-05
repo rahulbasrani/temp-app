@@ -12,6 +12,7 @@ import Footer from "../footer/footer.component";
 import SignupDescription from "./signup.description.component";
 require("./signup.style.css");
 const Danger = require("../../../assets/images/danger.svg") as string;
+toast.configure();
 
 interface FormValues {
   email: string;
@@ -22,7 +23,6 @@ interface FormValues {
   toggle: boolean;
 }
 
-toast.configure();
 const SignupForm: React.FC = () => {
   const dependencies = React.useContext(DIContext);
   const { translation, signupService } = dependencies;
@@ -118,30 +118,50 @@ const SignupForm: React.FC = () => {
           setDisable(false);
           hideLoader();
           setComponentState(ComponentViewState.ERROR);
-          throw new Error();
+          if ((response.error = "400")) {
+            toast(
+              <div className="toast-class">
+                <span>
+                  <img src={Danger} alt="" />
+                </span>
+                {translation.t("EMAIL_IS_ALREADY_IN_USE")}
+              </div>,
+              {
+                position: "top-center",
+                autoClose: 3500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: 0,
+              }
+            );
+          }
+          if (response.error == "404") {
+            toast(
+              <div className="toast-class">
+                <span>
+                  <img src={Danger} alt="" />
+                </span>
+                {translation.t("SERVER_NOT_RUNNING")}
+              </div>,
+              {
+                position: "top-center",
+                autoClose: 3500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: 0,
+              }
+            );
+          }
         } else {
           setDisable(false);
           hideLoader();
           setComponentState(ComponentViewState.LOADED);
         }
       } catch (e) {
-        toast(
-          <div className="toast-class">
-            <span>
-              <img src={Danger} alt="" />
-            </span>
-            server not running
-          </div>,
-          {
-            position: "top-center",
-            autoClose: 3500,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: 0,
-          }
-        );
         throw new Error(e);
       }
     },
@@ -167,17 +187,7 @@ const SignupForm: React.FC = () => {
         />
       </div>
       <Footer />
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer />
     </div>
   );
 };
