@@ -1,13 +1,14 @@
 import { ServiceResponse } from "../api";
+import { SignupService } from "./signup.service";
+import { RegistrationForm } from "@models";
 import axios, {
   AxiosInstance,
   AxiosResponse,
   AxiosRequestConfig,
   AxiosError,
 } from "axios";
-import { SignupService } from "./signup.service";
-import { RegistrationForm } from "@models";
 import Config from "@config";
+const baseUrl = Config.baseUrl;
 
 export default class SignupServiceImplement implements SignupService {
   static readonly RESOURCE = "/signup";
@@ -26,7 +27,7 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await axios.post(`${Config.baseUrl}/accounts`, data, {
+      const res = await axios.post(`${baseUrl}/accounts`, data, {
         headers: {
           "Content-Type": "application/json",
         },

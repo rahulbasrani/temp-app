@@ -769,16 +769,15 @@ button:hover .arrow::after {
   }
 }
 
-@media (max-height: 600px) {
+@media (max-height: 700px) {
   .hero-actual {
-    width: 35vw;
-    height: 50vh;
+    width: 30vw;
+    height: 40vh;
   }
-
+  .form-control {
+    font-size: 0.9vw;
+  }
   .check-text {
     font-size: 0.8rem;
-  }
-  .checkbox-label-text {
-    font-size: 0.5rem;
   }
 }
