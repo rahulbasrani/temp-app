@@ -1,3 +1,9 @@
+import axios, {
+  AxiosInstance,
+  AxiosResponse,
+  AxiosRequestConfig,
+  AxiosError,
+} from "axios";
 import { ServiceResponse } from "../api";
 import { SignupService } from "./signup.service";
 import { RegistrationForm } from "@models";
@@ -21,17 +27,18 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await fetch(baseUrl, {
-        method: "POST",
+      const res = axios.create({
+        baseURL: Config.baseUrl,
+      });
+      const ress = await res.post(baseUrl, data, {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
       });
-      if (res.status === 400) {
+      if (ress.status === 400) {
         throw new Error("400");
       }
-      if (res.status === 404) {
+      if (ress.status === 404) {
         throw new Error("404");
       }
       return new ServiceResponse<RegistrationForm>(data);
