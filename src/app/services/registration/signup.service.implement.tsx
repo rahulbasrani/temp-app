@@ -2,7 +2,7 @@ import { ServiceResponse } from "../api";
 import { SignupService } from "./signup.service";
 import { RegistrationForm } from "@models";
 import Config from "@config";
-const base_Url = Config.baseUrl;
+const baseUrl = Config.baseUrl;
 
 export default class SignupServiceImplement implements SignupService {
   static readonly RESOURCE = "/signup";
@@ -21,7 +21,7 @@ export default class SignupServiceImplement implements SignupService {
       organizationName: organizationName,
     };
     try {
-      const res = await fetch(base_Url, {
+      const res = await fetch(baseUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
