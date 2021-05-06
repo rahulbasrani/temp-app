@@ -9,7 +9,6 @@
     "program": "webapp-staging"
   },
   "public": {
-    "sentryENV": "staging",
-    "baseUrl": "https://omnimetic-backend-staging.herokuapp.com/accounts"
+    "sentryENV": "staging"
   }
 }

@@ -8,8 +8,7 @@
     "env": "NODE_ENV",
     "apiEndpoint": "API_ENDPOINT",
     "sentryDSN": "SENTRY_DSN",
-    "sentryENV": "SENTRY_ENV",
-    "baseUrl": "BASE_URL"
+    "sentryENV": "SENTRY_ENV"
   },
   "www": {
     "port": "PORT"

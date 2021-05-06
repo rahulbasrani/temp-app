@@ -771,12 +771,12 @@ button:hover .arrow::after {
 
 @media (max-height: 700px) {
   .hero-actual {
-    width: 30vw;
+    width: 40vw;
     height: 40vh;
   }
-  .form-control {
+  /* .form-control {
     font-size: 0.9vw;
-  }
+  } */
   .check-text {
     font-size: 0.8rem;
   }
