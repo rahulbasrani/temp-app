@@ -1,1 +1,2 @@
-export { RegistrationForm } from "./signup.model";
+export {User} from './user.model';
+export {Users} from './users.model';

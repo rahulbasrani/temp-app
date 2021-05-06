@@ -9,8 +9,7 @@
     "handleExceptions": true
   },
   "public": {
-    "apiEndpoint": "https://jsonplaceholder.typicode.com",
-    "baseUrl": "https://omnimetic-backend-staging.herokuapp.com/accounts"
+    "apiEndpoint": "https://jsonplaceholder.typicode.com"
   },
   "www": {
     "port": "8000"
