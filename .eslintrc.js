@@ -3,14 +3,14 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
   ],
   plugins: ["@typescript-eslint", "react"],
   rules: {
     indent: "off",
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/explicit-member-accessibility": 0,
-    "@typescript-eslint/no-explicit-any": 0
+    "@typescript-eslint/no-explicit-any": 0,
   },
   env: {
     browser: true,
@@ -22,6 +22,6 @@ module.exports = {
   settings: {
     react: {
       version: "detect", // Tells eslint-plugin-react to automatically detect the version of React to use,
-    }
-  }
+    },
+  },
 };

@@ -9,9 +9,10 @@
     "program": ""
   },
   "public": {
-    "apiEndpoint": "ss"
+    "apiEndpoint": "ss",
+    "baseUrl": "ss"
   },
   "www": {
-    "port": 4200
+    "port": "4200"
   }
 }

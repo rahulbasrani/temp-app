@@ -1,23 +1,19 @@
-import * as React from 'react';
-import i18next from 'i18next';
+import * as React from "react";
+import i18next from "i18next";
 
-import {UserServiceImpl, UserService, AuthService, AuthServiceImpl} from '@services';
+import { SignupServiceImplement, SignupService } from "../services";
 
-import {AppDependenciesProps} from './dependencies.props';
-import i18n from './i18n';
-
-const userService: UserService = new UserServiceImpl();
-const authService: AuthService = new AuthServiceImpl();
+import { AppDependenciesProps } from "./dependencies.props";
+import i18n from "./i18n";
+const signupService: SignupService = new SignupServiceImplement();
 const translation: i18next.i18n = i18n;
-
 
 export const getDependencies = (): AppDependenciesProps => {
   return {
-    userService,
     translation,
-    authService,
+    signupService,
   };
-}
+};
 
 const DIContext = React.createContext<AppDependenciesProps>(getDependencies());
 
