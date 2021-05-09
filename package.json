@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate-react-typescript",
+  "name": "temp-app",
   "version": "2.0.0",
   "description": "Boilerplate for React+TypeScript",
   "scripts": {
@@ -14,7 +14,7 @@
   "precommit": "lint, test",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jalantechnologies/boilerplate-react-typescript.git"
+    "url": "git+https://github.com/ravi-basrani/temp-app.git"
   },
   "keywords": [
     "boilerplate",
@@ -24,9 +24,9 @@
   "author": "gauravumrani@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jalantechnologies/boilerplate-react-typescript/issues"
+    "url": "https://github.com/ravi-basrani/temp-app/issues"
   },
-  "homepage": "https://github.com/jalantechnologies/boilerplate-react-typescript#readme",
+  "homepage": "https://github.com/ravi-basrani/temp-app#readme",
   "dependencies": {
     "@sentry/browser": "^5.5.0",
     "axios": "^0.19.0",
